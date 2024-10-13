@@ -32,19 +32,19 @@ Download the `logging.jar` file from the [Releases](https://github.com/EmrD/java
 
 1. **Place the JAR File:**
 
-   Create a `libs` directory in your project and move `logging.jar` into it.
+   Create a `lib` directory in your project and move `logging.jar` into it.
 
 2. **Compile Your Project:**
 
    ```bash
     javac -cp lib/logging.jar -d bin src/yourapp/*.java
-    java -cp bin:libs/logging.jar yourapp.MainClass
+    java -cp bin:lib/logging.jar yourapp.MainClass
    ```
 
 Note: On Windows, use ; instead of : as the classpath separator:
 
 ```bash
-  java -cp bin;libs/logging.jar yourapp.MainClass
+  java -cp bin;lib/logging.jar yourapp.MainClass
 ```
 
 ### Example usage
