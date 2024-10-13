@@ -1,18 +1,68 @@
-## Getting Started
+# Custom Logging Library
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+A simple Java logging library.
 
-## Folder Structure
+## Features
 
-The workspace contains two folders by default, where:
+- DEBUG, INFO, WARN, ERROR levels
+- Writes logs to a file
+- Easy to use
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+## Installation
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+### Step 1: Download the JAR File
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Download the `logging.jar` file from the [Releases](https://github.com/EmrD/java-logging-package/releases/tag/v1.0.0) page.
 
-## Dependency Management
+### Step 2: Add the JAR to Your Project
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+#### a. Using an IDE (Eclipse, IntelliJ, etc.)
+
+- **Eclipse:**
+  1. Right-click on your project.
+  2. Select `Build Path` > `Add External Archives...`.
+  3. Choose the downloaded `logging.jar` file and add it.
+
+- **IntelliJ IDEA:**
+  1. Go to `File` > `Project Structure` > `Modules` > `Dependencies`.
+  2. Click the `+` button and select `JARs or directories`.
+  3. Select the `logging.jar` file and add it.
+
+#### b. Using Command Line
+
+1. **Place the JAR File:**
+
+   Create a `libs` directory in your project and move `logging.jar` into it.
+
+2. **Compile Your Project:**
+
+   ```bash
+    javac -cp lib/logging.jar -d bin src/yourapp/*.java
+    java -cp bin:libs/logging.jar yourapp.MainClass
+   ```
+
+Note: On Windows, use ; instead of : as the classpath separator:
+
+```bash
+  java -cp bin;libs/logging.jar yourapp.MainClass
+```
+
+### Example usage
+
+```bash
+import com.emr.logging.Logger;
+import com.emr.logging.LogLevel;
+
+public class Example {
+    public static void main(String[] args) {
+        Logger logger = new Logger(LogLevel.INFO);
+
+        logger.debug("This is a debug message.");
+        logger.info("Application started.");
+        logger.warn("This is a warning message.");
+        logger.error("This is an error message.");
+
+        logger.close(); 
+    }
+}
+```
