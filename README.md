@@ -27,6 +27,12 @@ Download the `logging.jar` file from the [Releases](https://github.com/EmrD/java
   1. Go to `File` > `Project Structure` > `Modules` > `Dependencies`.
   2. Click the `+` button and select `JARs or directories`.
   3. Select the `logging.jar` file and add it.
+ 
+- **Visual Studio Code:**
+  1. Install Java extention from Marketplace.
+  2. Open your project with Java extention.
+  3. Go to your `Project Settings` > `Libraries` > `Add Library` > Select JAR file > `Apply Settings`.
+  4. Restart your IDE.
 
 #### b. Using Command Line
 
