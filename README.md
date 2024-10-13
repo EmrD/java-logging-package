@@ -1,6 +1,8 @@
-# Custom Logging Library
+# Logging Library With Java
 
 A simple Java logging library.
+
+[![](https://jitpack.io/v/EmrD/java-logging-package.svg)](https://jitpack.io/#EmrD/java-logging-package)
 
 ## Features
 
